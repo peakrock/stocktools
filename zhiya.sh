@@ -7,6 +7,7 @@ function get_from_web(){
 
 	sed ':a;N;$!ba;s/\n/ /g' ${OFILE}  | grep -P "<table width=\"99%\".*?</table>" -o > ${OFILE}.tmp  && mv -f ${OFILE}.tmp ${OFILE}
 	grep -P "<tr style = \"font-size:12px;\">.*?</tr>" -o  $OFILE  >> $SUMMARY
+	rm -f $OFILE
 }
 
 
